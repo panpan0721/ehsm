@@ -1,12 +1,13 @@
 const nano = require('nano')
 
-const {
+let {
   EHSM_CONFIG_COUCHDB_USERNAME,
   EHSM_CONFIG_COUCHDB_PASSWORD,
   EHSM_CONFIG_COUCHDB_SERVER,
   EHSM_CONFIG_COUCHDB_PORT,
   EHSM_CONFIG_COUCHDB_DB,
 } = process.env
+EHSM_CONFIG_COUCHDB_DB = 'ehsm_kms_db2'
 console.log(process.env)
 async function connectDB(server) {
   if (
@@ -19,6 +20,7 @@ async function connectDB(server) {
     console.log('couchdb url error')
   } else {
     let dburl = `http://${EHSM_CONFIG_COUCHDB_USERNAME}:${EHSM_CONFIG_COUCHDB_PASSWORD}@${EHSM_CONFIG_COUCHDB_SERVER}:${EHSM_CONFIG_COUCHDB_PORT}`
+    let dburl = `http://admin:password@10.112.240.122:5984`
     const nanoDb = nano(dburl)
     let DB
     try {
