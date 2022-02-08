@@ -20,7 +20,7 @@ async function connectDB(server) {
     console.log('couchdb url error')
   } else {
     let dburl = `http://${EHSM_CONFIG_COUCHDB_USERNAME}:${EHSM_CONFIG_COUCHDB_PASSWORD}@${EHSM_CONFIG_COUCHDB_SERVER}:${EHSM_CONFIG_COUCHDB_PORT}`
-    let dburl = `http://admin:password@10.112.240.122:5984`
+    dburl = `http://admin:password@10.112.240.122:5984`
     const nanoDb = nano(dburl)
     let DB
     try {
