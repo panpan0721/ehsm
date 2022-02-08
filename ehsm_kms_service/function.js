@@ -196,6 +196,7 @@ const create_user_info = (DB, res) => {
       res.send(_result(200, 'successful', { appid: appid, appkey: appid }))
     })
     .catch((e) => {
+      console.log(e)
       res.send(_result(400, 'create app info faild', e))
     })
 }
