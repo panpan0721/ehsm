@@ -7,7 +7,7 @@ const {
   EHSM_CONFIG_COUCHDB_PORT,
   EHSM_CONFIG_COUCHDB_DB,
 } = process.env
-
+console.log(process.env)
 async function connectDB(server) {
   if (
     !EHSM_CONFIG_COUCHDB_USERNAME ||
